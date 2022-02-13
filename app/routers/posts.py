@@ -13,7 +13,7 @@ router = APIRouter(
 )
 
 @router.get('/posts', response_model=List[schema.GetResponseBackOut])
-async def posts(db: session= Depends(get_db), limit: int = 10, skip: int = 2, search: Optional[str] = ""):
+async def posts(db: session= Depends(get_db), limit: int = 10, skip: int = 0, search: Optional[str] = ""):
     # curr.execute(""" select * from posts """)
     # posts_rec = curr.fetchall()
     print(search)
